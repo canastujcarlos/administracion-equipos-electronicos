@@ -1,0 +1,123 @@
+.root, .root-pane {
+    -color-primary: #f97316;
+    -color-primary-dark: #ea580c;
+    -color-primary-deep: #c2410c;
+    -color-primary-light: #fff7ed;
+    -color-text: #1f2937;
+    -color-muted: #6b7280;
+    -color-border: #d1d5db;
+    -color-error: #dc2626;
+    -fx-font-family: "Segoe UI";
+}
+
+.root-pane {
+    -fx-background-color: white;
+}
+
+.brand-panel {
+    -fx-background-color: linear-gradient(to bottom right, #fb923c, #f97316 45%, #c2410c);
+    -fx-padding: 40;
+}
+
+.logo-box {
+    -fx-background-color: white;
+    -fx-background-radius: 24;
+    -fx-padding: 18;
+    -fx-effect: dropshadow(gaussian, rgba(124, 45, 18, 0.35), 25, 0.1, 0, 8);
+}
+
+.brand-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.brand-subtitle {
+    -fx-text-fill: #ffedd5;
+    -fx-font-size: 14px;
+    -fx-text-alignment: center;
+}
+
+.form-panel {
+    -fx-background-color: white;
+    -fx-padding: 40;
+}
+
+.form-title {
+    -fx-text-fill: -color-text;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+.form-subtitle {
+    -fx-text-fill: -color-muted;
+    -fx-font-size: 14px;
+}
+
+.field-label {
+    -fx-text-fill: -color-text;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.input-field {
+    -fx-background-color: #f9fafb;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 11 12 11 12;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #9ca3af;
+}
+
+.input-field:focused {
+    -fx-background-color: white;
+    -fx-border-color: -color-primary;
+    -fx-border-width: 1.5;
+    -fx-effect: dropshadow(gaussian, rgba(249, 115, 22, 0.35), 8, 0, 0, 0);
+}
+
+.btn-login {
+    -fx-background-color: -color-primary;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 12 20 12 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(249, 115, 22, 0.40), 10, 0, 0, 3);
+}
+
+.btn-login:hover {
+    -fx-background-color: -color-primary-dark;
+}
+
+.btn-login:pressed {
+    -fx-background-color: -color-primary-deep;
+}
+
+.btn-login:disabled {
+    -fx-opacity: 0.6;
+}
+
+.btn-register {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-primary-dark;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-border-color: -color-primary;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.btn-register:hover {
+    -fx-background-color: -color-primary-light;
+}
+
+.error-label {
+    -fx-text-fill: -color-error;
+    -fx-font-size: 12px;
+    -fx-padding: 4 0 0 0;
+}

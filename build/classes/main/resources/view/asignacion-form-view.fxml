@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="equipos" spacing="14.0" prefWidth="520.0"
+      xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.com.aliprinsa.administracion.gusto.controller.AsignacionFormController">
+
+    <stylesheets>
+        <URL value="@../css/equipos-view.css" />
+    </stylesheets>
+
+    <Label text="Nueva asignación" styleClass="page-title" />
+
+    <VBox spacing="4.0">
+        <Label text="Equipo disponible *" styleClass="campo-label" />
+        <ComboBox fx:id="cmbEquipo" maxWidth="Infinity" promptText="Operativos sin responsable" />
+    </VBox>
+
+    <VBox spacing="4.0">
+        <Label text="Empleado *" styleClass="campo-label" />
+        <ComboBox fx:id="cmbEmpleado" maxWidth="Infinity" promptText="Selecciona un empleado" />
+    </VBox>
+
+    <VBox spacing="4.0">
+        <Label text="Fecha de inicio *" styleClass="campo-label" />
+        <DatePicker fx:id="dpInicio" maxWidth="Infinity" />
+    </VBox>
+
+    <VBox spacing="4.0">
+        <Label text="Observaciones" styleClass="campo-label" />
+        <TextArea fx:id="txtObservaciones" prefRowCount="3" wrapText="true" />
+    </VBox>
+
+    <Label fx:id="lblError" styleClass="error-label" wrapText="true" />
+
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Cancelar" onAction="#cancelar" styleClass="btn-secundario" />
+        <Button text="Guardar" onAction="#guardar" styleClass="btn-primario" defaultButton="true" />
+    </HBox>
+</VBox>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox prefHeight="620.0" prefWidth="900.0" styleClass="root-pane" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.aliprinsa.administracion.gusto.controller.RegistroController">
+
+    <stylesheets>
+        <URL value="@../css/login-view.css" />
+        <URL value="@../css/registro-view.css" />
+    </stylesheets>
+
+    <!-- Panel izquierdo: marca -->
+    <VBox alignment="CENTER" minWidth="280.0" prefWidth="400.0" spacing="16.0" styleClass="brand-panel" HBox.hgrow="ALWAYS">
+
+        <StackPane maxHeight="150.0" maxWidth="150.0" styleClass="logo-box">
+            <ImageView fitHeight="111.0" fitWidth="127.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/logo-gusto.jpeg" />
+                </image>
+            </ImageView>
+        </StackPane>
+
+        <Label styleClass="brand-title" text="Crea tu cuenta" />
+        <Label maxWidth="300.0" styleClass="brand-subtitle" text="Regístrate para acceder al sistema de gestión de equipos" wrapText="true" />
+    </VBox>
+
+    <!-- Panel derecho: formulario -->
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" minWidth="340.0" prefWidth="500.0" styleClass="form-scroll" HBox.hgrow="ALWAYS">
+
+        <VBox alignment="CENTER" styleClass="form-panel">
+            <VBox alignment="CENTER_LEFT" maxWidth="420.0" spacing="8.0">
+
+                <Label styleClass="form-title" text="Registro" />
+                <Label styleClass="form-subtitle" text="Completa tus datos para crear una cuenta" />
+
+                <!-- Nombres y apellidos en dos columnas -->
+                <GridPane hgap="12.0" vgap="6.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                        <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                    </columnConstraints>
+                    <VBox.margin>
+                        <Insets top="16.0" />
+                    </VBox.margin>
+
+                    <Label styleClass="field-label" text="Nombres" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <Label styleClass="field-label" text="Apellidos" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <TextField fx:id="txtNombres" promptText="Juan Carlos" styleClass="input-field" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="txtApellidos" promptText="Pérez López" styleClass="input-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <Label styleClass="field-label" text="Correo electrónico">
+                    <VBox.margin>
+                        <Insets top="6.0" />
+                    </VBox.margin>
+                </Label>
+                <TextField fx:id="txtCorreo" promptText="usuario@empresa.com" styleClass="input-field" />
+
+                <Label styleClass="field-label" text="Departamento">
+                    <VBox.margin>
+                        <Insets top="6.0" />
+                    </VBox.margin>
+                </Label>
+                <ComboBox fx:id="cmbDepartamento" maxWidth="Infinity" promptText="Selecciona tu departamento" styleClass="input-field" />
+
+                <Label styleClass="field-label" text="Contraseña">
+                    <VBox.margin>
+                        <Insets top="6.0" />
+                    </VBox.margin>
+                </Label>
+                <PasswordField fx:id="txtPassword" promptText="Mínimo 8 caracteres" styleClass="input-field" />
+
+                <Label styleClass="field-label" text="Confirmar contraseña">
+                    <VBox.margin>
+                        <Insets top="6.0" />
+                    </VBox.margin>
+                </Label>
+                <PasswordField fx:id="txtConfirmPassword" promptText="Repite la contraseña" styleClass="input-field" />
+
+                <Label fx:id="lblError" managed="false" styleClass="error-label" visible="false" wrapText="true" />
+
+                <Button fx:id="btnRegistrar" defaultButton="true" maxWidth="Infinity" onAction="#handleRegistro" styleClass="btn-login" text="CREAR CUENTA">
+                    <VBox.margin>
+                        <Insets top="16.0" />
+                    </VBox.margin>
+                </Button>
+
+                <Button maxWidth="Infinity" onAction="#handleVolver" styleClass="btn-register" text="← VOLVER AL INICIO DE SESIÓN" />
+            </VBox>
+        </VBox>
+    </ScrollPane>
+</HBox>

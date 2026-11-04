@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="equipos" spacing="14.0" prefWidth="580.0"
+      xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.com.aliprinsa.administracion.gusto.controller.MantenimientoFormController">
+
+    <stylesheets>
+        <URL value="@../css/equipos-view.css" />
+    </stylesheets>
+
+    <Label fx:id="lblTitulo" text="Nuevo mantenimiento" styleClass="page-title" />
+
+    <VBox spacing="4.0">
+        <Label text="Equipo *" styleClass="campo-label" />
+        <ComboBox fx:id="cmbEquipo" maxWidth="Infinity" promptText="Selecciona un equipo" />
+    </VBox>
+
+    <HBox spacing="14.0">
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <Label text="Tipo *" styleClass="campo-label" />
+            <ComboBox fx:id="cmbTipo" maxWidth="Infinity" />
+        </VBox>
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <Label text="Fecha *" styleClass="campo-label" />
+            <DatePicker fx:id="dpFecha" maxWidth="Infinity" />
+        </VBox>
+    </HBox>
+
+    <HBox spacing="14.0">
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <Label text="Realizado por *" styleClass="campo-label" />
+            <ComboBox fx:id="cmbEmpleado" maxWidth="Infinity" promptText="Selecciona un empleado" />
+        </VBox>
+        <VBox spacing="4.0" HBox.hgrow="ALWAYS">
+            <Label text="Estado del equipo tras el mantenimiento" styleClass="campo-label" />
+            <ComboBox fx:id="cmbEstadoPost" maxWidth="Infinity" />
+        </VBox>
+    </HBox>
+
+    <VBox spacing="4.0">
+        <Label text="Descripción *" styleClass="campo-label" />
+        <TextArea fx:id="txtDescripcion" prefRowCount="5" wrapText="true"
+                  promptText="Trabajo realizado, piezas cambiadas, diagnóstico…" />
+    </VBox>
+
+    <Label fx:id="lblError" styleClass="error-label" wrapText="true" />
+
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Cancelar" onAction="#cancelar" styleClass="btn-secundario" />
+        <Button text="Guardar" onAction="#guardar" styleClass="btn-primario" defaultButton="true" />
+    </HBox>
+</VBox>

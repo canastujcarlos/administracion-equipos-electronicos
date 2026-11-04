@@ -1,0 +1,83 @@
+.main-root {
+    -color-primary: #f97316;
+    -color-primary-dark: #ea580c;
+    -color-primary-deep: #c2410c;
+    -fx-font-family: "Segoe UI";
+    -fx-background-color: #fff7ed;
+}
+
+
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #fb923c, #f97316 40%, #c2410c);
+    -fx-padding: 28 16 20 16;
+    -fx-effect: dropshadow(gaussian, rgba(124, 45, 18, 0.30), 18, 0.1, 3, 0);
+}
+
+.sidebar-title {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 8;
+}
+
+.sidebar-user {
+    -fx-text-fill: #ffedd5;
+    -fx-font-size: 12px;
+    -fx-padding: 0 0 0 8;
+}
+
+.sidebar-separator {
+    -fx-background-color: rgba(255, 255, 255, 0.30);
+    -fx-pref-height: 1;
+}
+
+.menu-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12 16 12 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.menu-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.22);
+}
+
+.menu-btn:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Opción activa (se asigna desde el controller, ver nota abajo) */
+.menu-btn-activo {
+    -fx-background-color: white;
+    -fx-text-fill: #c2410c;
+}
+
+.menu-btn-activo:hover {
+    -fx-background-color: white;
+}
+
+.menu-btn-salir {
+    -fx-background-color: rgba(124, 45, 18, 0.45);
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-padding: 11 16 11 16;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.menu-btn-salir:hover {
+    -fx-background-color: rgba(124, 45, 18, 0.70);
+}
+
+
+
+.contenido {
+    -fx-background-color: #e6f0fb;
+    -fx-padding: 24;
+}

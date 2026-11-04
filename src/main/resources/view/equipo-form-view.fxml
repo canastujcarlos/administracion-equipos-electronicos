@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox styleClass="equipos form-dialog" spacing="14.0" prefWidth="760.0"
+      xmlns="http://javafx.com/javafx/21.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="main.java.com.aliprinsa.administracion.gusto.controller.EquipoFormController">
+
+    <stylesheets>
+        <URL value="@../css/equipos-view.css" />
+    </stylesheets>
+
+    <VBox spacing="2.0">
+        <Label fx:id="lblTitulo" text="Nuevo equipo" styleClass="page-title" />
+        <Label fx:id="lblLevantadoPor" styleClass="page-subtitle" />
+    </VBox>
+
+    <ScrollPane fitToWidth="true" prefHeight="520.0" VBox.vgrow="ALWAYS" styleClass="form-scroll">
+        <GridPane hgap="14.0" vgap="10.0">
+            <padding><Insets top="4.0" right="8.0" bottom="4.0" left="4.0" /></padding>
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50.0" />
+                <ColumnConstraints percentWidth="50.0" />
+            </columnConstraints>
+
+            <!-- ===== Identificación ===== -->
+            <Label text="Identificación" styleClass="seccion-titulo"
+                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <Label text="Código de inventario *" styleClass="campo-label" />
+                <TextField fx:id="txtCodigo" promptText="Ej. GUSTO-01" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                <Label text="Tipo de equipo *" styleClass="campo-label" />
+                <ComboBox fx:id="cmbTipo" maxWidth="Infinity" />
+            </VBox>
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <Label text="Marca *" styleClass="campo-label" />
+                <ComboBox fx:id="cmbMarca" maxWidth="Infinity" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <Label text="Modelo *" styleClass="campo-label" />
+                <TextField fx:id="txtModelo" />
+            </VBox>
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <Label text="No. de serie / Service Tag *" styleClass="campo-label" />
+                <TextField fx:id="txtSerie" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                <Label text="Nombre de equipo (hostname)" styleClass="campo-label" />
+                <TextField fx:id="txtHostname" />
+            </VBox>
+
+            <!-- ===== Red ===== -->
+            <Label text="Red" styleClass="seccion-titulo"
+                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                <Label text="MAC Ethernet" styleClass="campo-label" />
+                <TextField fx:id="txtMac" promptText="AA:BB:CC:DD:EE:FF" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                <Label text="Dirección IP" styleClass="campo-label" />
+                <TextField fx:id="txtIp" promptText="192.168.1.10" />
+            </VBox>
+
+            <!-- ===== Ubicación y estado ===== -->
+            <Label text="Ubicación y estado" styleClass="seccion-titulo"
+                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="6" />
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                <Label text="Sede / Área" styleClass="campo-label" />
+                <ComboBox fx:id="cmbSede" maxWidth="Infinity" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <Label text="Ubicación" styleClass="campo-label" />
+                <ComboBox fx:id="cmbUbicacion" maxWidth="Infinity" />
+            </VBox>
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                <Label text="Estado físico *" styleClass="campo-label" />
+                <ComboBox fx:id="cmbEstadoFisico" maxWidth="Infinity" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                <Label text="Estado funcional *" styleClass="campo-label" />
+                <ComboBox fx:id="cmbEstadoFuncional" maxWidth="Infinity" />
+            </VBox>
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                <Label text="Fecha de levantamiento" styleClass="campo-label" />
+                <DatePicker fx:id="dpLevantamiento" maxWidth="Infinity" />
+            </VBox>
+            <CheckBox fx:id="chkRequiereAtencion" text="Requiere atención"
+                      GridPane.columnIndex="1" GridPane.rowIndex="9" GridPane.valignment="BOTTOM" />
+
+            <!-- ===== Compra y garantía ===== -->
+            <Label text="Compra y garantía" styleClass="seccion-titulo"
+                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="10" />
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="11">
+                <Label text="Fecha de compra" styleClass="campo-label" />
+                <DatePicker fx:id="dpCompra" maxWidth="Infinity" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                <Label text="Garantía hasta" styleClass="campo-label" />
+                <DatePicker fx:id="dpGarantia" maxWidth="Infinity" />
+            </VBox>
+
+            <!-- ===== Datos de cómputo (solo Laptop / Desktop) ===== -->
+            <VBox fx:id="boxComputo" spacing="10.0" visible="false"
+                  GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="12">
+                <Label text="Datos de cómputo" styleClass="seccion-titulo" />
+                <GridPane hgap="14.0" vgap="10.0">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="50.0" />
+                        <ColumnConstraints percentWidth="50.0" />
+                    </columnConstraints>
+
+                    <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                        <Label text="Procesador (CPU)" styleClass="campo-label" />
+                        <TextField fx:id="txtProcesador" promptText="Intel Core i5-1135G7" />
+                    </VBox>
+                    <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                        <Label text="RAM (GB)" styleClass="campo-label" />
+                        <TextField fx:id="txtRam" promptText="8" />
+                    </VBox>
+
+                    <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                        <Label text="Tipo de disco" styleClass="campo-label" />
+                        <ComboBox fx:id="cmbTipoDisco" maxWidth="Infinity" />
+                    </VBox>
+                    <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <Label text="Capacidad del disco (GB)" styleClass="campo-label" />
+                        <TextField fx:id="txtCapacidadDisco" promptText="256" />
+                    </VBox>
+
+                    <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                        <Label text="Sistema operativo" styleClass="campo-label" />
+                        <ComboBox fx:id="cmbSo" maxWidth="Infinity" />
+                    </VBox>
+                    <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Label text="Versión / Edición" styleClass="campo-label" />
+                        <TextField fx:id="txtVersionSo" promptText="Windows 11 Pro 23H2" />
+                    </VBox>
+
+                    <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                        <Label text="Dominio / Grupo de trabajo" styleClass="campo-label" />
+                        <TextField fx:id="txtDominio" />
+                    </VBox>
+                    <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Label text="Antivirus / Protección" styleClass="campo-label" />
+                        <TextField fx:id="txtAntivirus" />
+                    </VBox>
+                </GridPane>
+            </VBox>
+
+            <!-- ===== Notas ===== -->
+            <Label text="Notas" styleClass="seccion-titulo"
+                   GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="13" />
+
+            <VBox spacing="4.0" GridPane.columnIndex="0" GridPane.rowIndex="14">
+                <Label text="Accesorios" styleClass="campo-label" />
+                <TextArea fx:id="txtAccesorios" prefRowCount="3" wrapText="true" />
+            </VBox>
+            <VBox spacing="4.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+                <Label text="Observaciones" styleClass="campo-label" />
+                <TextArea fx:id="txtObservaciones" prefRowCount="3" wrapText="true" />
+            </VBox>
+        </GridPane>
+    </ScrollPane>
+
+    <Label fx:id="lblError" styleClass="error-label" wrapText="true" />
+
+    <HBox spacing="10.0" alignment="CENTER_RIGHT">
+        <Region HBox.hgrow="ALWAYS" />
+        <Button text="Cancelar" onAction="#cancelar" styleClass="btn-secundario" />
+        <Button text="Guardar" onAction="#guardar" styleClass="btn-primario" defaultButton="true" />
+    </HBox>
+</VBox>
